@@ -1,0 +1,28 @@
+<h2 class="screen-align">StudentCreate</h2>
+<div method="get" id="template-ia8j" class="form ">
+    <div id="template-inh8" class="form-group ">
+        <label id="template-id9j" class="label ">
+            <div id="template-iz9do" class="">Student Name</div>
+        </label>
+        <input placeholder="Enter the student name" id="template-i1wg" required="true"
+        class="input " />
+    </div>
+    <div id="template-ijkf" class="form-group ">
+        <label id="template-i7y5" class="label ">
+            <div id="template-i0rmj" class="">Student Age</div>
+        </label>
+        <input type="email" placeholder="Enter the student age" id="template-iyz7"
+        required="true" [(ngModel)]="Student_Data.Student_Age" [ngModelOptions]="{standalone: true}"
+        class="input " />
+    </div>
+    <div id="template-ighk5" class="form-group "></div>
+</div>
+<label id="template-iargh" class="label ">
+    <div id="template-iahuw" class="">Student Roll No</div>
+</label>
+<button id="template-it02c" (click)="GpCreate()" class="button btn btn-primary ">
+    <div id="template-igvam" class="">Create</div>
+</button>
+<input id="template-iaw0i" placeholder="Enter the student roll no" required="true"
+[(ngModel)]="Student_Data.Student_Roll_No" [ngModelOptions]="{standalone: true}"
+class="input form-control " />

@@ -1,0 +1,159 @@
+---
+openapi: 3.0.0
+info:
+   version: 1.3.0
+   title: ecspoc open api specification
+   description: schoolcreate API
+   termsOfService: http://api_url/terms/
+   contact:
+      name: ContactName
+      email: hello@wolox.co
+      url: https://www.wolox.com.ar/
+   license:
+      name: Apache 2.0
+      url: https://www.apache.org/licenses/LICENSE-2.0.html
+servers:
+   - url: http://localhost:8011
+     description: schoolcreate
+tags:
+- name: Student_Data
+  description: Students meta data
+paths:
+   "/Student_Data/{id}":
+      delete:
+         tags:
+         -  Student_Data
+         description: GpDelete
+         parameters:
+         -  in: "path"
+            description: GpDelete
+            name: id
+            required: true
+            schema:
+               type: "string"
+         responses:
+            200:
+               description: Success
+            400:
+               description: Bad Request
+            404:
+               description: Not Found
+            500:
+               description: Internal Server Error
+      get:
+         tags:
+         -  Student_Data
+         description: GpGetNounById
+         parameters:
+         -  in: "path"
+            description: GpGetNounById
+            name: id
+            required: true
+            schema:
+               type: "string"
+         responses:
+            200:
+               description: Success
+            400:
+               description: Bad Request
+            404:
+               description: Not Found
+            500:
+               description: Internal Server Error
+   "/Student_Data/get/search":
+      get:
+         tags:
+         -  Student_Data
+         description: GpSearch
+         responses:
+            200:
+               description: Success
+            400:
+               description: Bad Request
+            404:
+               description: Not Found
+            500:
+               description: Internal Server Error
+   "/Student_Data/get/update":
+      put:
+         tags:
+         -  Student_Data
+         description: GpSearchForUpdate
+         requestBody:
+            content:
+               application/json:
+                  schema:
+                     $ref: "#/components/schemas/Student_Data"
+         responses:
+            200:
+               description: Success
+            400:
+               description: Bad Request
+            404:
+               description: Not Found
+            500:
+               description: Internal Server Error
+   "/Student_Data":
+      put:
+         tags:
+         -  Student_Data
+         description: GpUpdate
+         requestBody:
+            content:
+               application/json:
+                  schema:
+                     $ref: "#/components/schemas/Student_Data"
+         responses:
+            200:
+               description: Success
+            400:
+               description: Bad Request
+            404:
+               description: Not Found
+            500:
+               description: Internal Server Error
+      get:
+         tags:
+         -  Student_Data
+         description: GpGetAllValues
+         responses:
+            200:
+               description: Success
+            400:
+               description: Bad Request
+            404:
+               description: Not Found
+            500:
+               description: Internal Server Error
+      post:
+         tags:
+         -  Student_Data
+         description: GpCreate
+         requestBody:
+            content:
+               application/json:
+                  schema:
+                     $ref: "#/components/schemas/Student_Data"
+         responses:
+            200:
+               description: Success
+            400:
+               description: Bad Request
+            404:
+               description: Not Found
+            500:
+               description: Internal Server Error
+components:
+   schemas:
+      Student_Data:
+         type: object
+         properties:
+            Student_Name:
+               type: "string"
+               description: Description
+            Student_Age:
+               type: "string"
+               description: Description
+            Student_Roll_No:
+               type: "number"
+               description: Description
